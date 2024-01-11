@@ -1,0 +1,23 @@
+---
+name: custom
+version: "2024-01-10"
+sort: by_weight
+import_tables:
+  - mydicts
+  - dicts/clover/clover.base # 单字，四叶草
+  - dicts/ice/8105 # 雾凇拼音，字表
+  - dicts/ice/41448 # 大字表
+  - dicts/ice/base # 基础词库
+  - dicts/ice/ext # 扩展词库
+  - dicts/clover/clover.phrase # 词组
+  - dicts/extend/luna_pinyin.sogoupopular
+  - dicts/extend/luna_pinyin.sgmain
+  - dicts/extend/luna_pinyin.wenhua
+  - dicts/thuocl/THUOCL_IT # IT词
+  - dicts/thuocl/THUOCL_diming
+  - dicts/thuocl/THUOCL_chengyu
+  - dicts/thuocl/THUOCL_animal
+  - dicts/thuocl/THUOCL_car
+  - dicts/thuocl/THUOCL_food
+  - dicts/thuocl/THUOCL_poem
+...

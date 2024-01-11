@@ -1,0 +1,12 @@
+patch:
+  menu:
+    page_size: 7
+  ascii_composer/switch_key:
+    Shift_L: commit_code
+    Caps_Lock: noop
+  schema_list:
+    - schema: double_pinyin_flypy
+    - schema: easy_en
+    - schema: luna_pinyin
+  switcher/hotkeys: # 这个列表里每项定义一个快捷键，使哪个都中
+    - "Control+Shift+space" # 你看写法并不是 Ctrl+` 而是与 IBus 一致的表示法
