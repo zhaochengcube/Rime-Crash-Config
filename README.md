@@ -58,6 +58,9 @@ Win用户下载后的默认配置文件夹为：`%APPDATA\Rime%`，也可以通�
 ### 自定义符号
 对应配置文件：`mysymbols.yaml`，在这里配置全角，半角以及符号，符号的配置参考[雾凇拼音](https://github.com/iDvel/rime-ice)，注意配置符号串的时候开头字母一定要是大写V
 
+### Lua脚本集成
+本配置默认集成了日期脚本，输入`date`会显示当前日期的大写和小写，输入`time`会显示当前时间
+
 ### 参考博客
 - https://www.dreamxu.com/install-config-squirrel/
 - https://jiz4oh.com/2020/10/how-to-use-rime/
