@@ -1,16 +1,3 @@
-# 效果预览：
-
-## Mac：
-<div align="center"><img src="https://gitlab.com/zhaochengcube/images/-/raw/main/pictures/2024/01/11_20_32_46_rime-mac.png" width="" height="" /></div>
-
-## Win：
-<div align="center"><img src="https://gitlab.com/zhaochengcube/images/-/raw/main/pictures/2024/01/11_20_46_53_rime-win.png?ref_type=heads" width="" height="" /></div>
-
-## 英文输入
-<div align="center"><img src="https://gitlab.com/zhaochengcube/images/-/raw/main/pictures/2024/01/11_21_41_55_rime-en.png" width="" height="" /></div>
-
---- 
-
 # 前言
 Rime的全名是：中州韵输入法引擎，也就是说它不是一个具体的输入法，而是一个可以随意扩展定制的输入法框架。并且它免费、开源、跨平台，最重要的一点是数据本地化，词库和配置看得见，摸得着。本文不对Rime做过多介绍，如果对其感兴趣可以去[官网](https://rime.im/)了解更多。
 
@@ -20,15 +7,25 @@ Rime的全名是：中州韵输入法引擎，也就是说它不是一个具体�
 首先在[官网](https://rime.im/)下载Rime，Windows下载小狼毫(Weasel)，Mac下载鼠鬚管(Squirrel)，然后下载本仓库代码。
 
 ## Mac
-Mac用户下载好后默认的配置文件夹为：`~/Library/Rime`，也可以通过 “系统输入法菜单/鼠鬚管/用户设置打开” ，注意：Mac用户下载好后需要重新登录或者重启才能生效。打开配置文件夹和下载好的本仓库代码，将除`weasel.custom.yaml`以外的文件全复制到配置文件夹中。复制完成后，点击 “系统输入法菜单/鼠鬚管/重新部署”，首次部署大约要20秒左右，部署期间敲键盘输出的是英文，部署好后再敲就会正常显示了。
+Mac用户下载好后默认的配置文件夹为：`~/Library/Rime`，也可以通过 “系统输入法菜单/鼠鬚管/用户设置打开” 。注意：**Mac用户下载好后需要重新登录或者重启才能生效**。
+
+打开配置文件夹(A)和下载好的本仓库代码文件夹(B)，将B中除`weasel.custom.yaml`以外的文件全复制到A中。
+
+点击 “系统输入法菜单/鼠鬚管/重新部署”，首次部署大约要20秒左右，部署期间敲键盘输出的是英文，部署好后再敲就会正常显示了。
 
 ## Win
-Win用户下载后的默认配置文件夹为：`%APPDATA\Rime%`，也可以通过 “任务栏\小狼毫输入法\用户文件夹打开” ，最好安装的时候选择自己指定的文件夹，Win用户不需要重新登录，打开配置文件夹和下载好的本仓库代码，将除`squirrel.custom.yaml`以外的文件全复制到配置文件夹中。复制完成后，点击 “任务栏\小狼毫输入法\重新部署”，首次部署大约要20秒左右，部署期间敲键盘输出的是英文，部署好后再敲就会正常显示了。
+Win用户下载后的默认配置文件夹为：`%APPDATA%\Rime`，也可以通过 “任务栏\小狼毫输入法\用户文件夹打开” ，最好安装的时候选择自己指定的文件夹，**Win用户不需要重新登录**。
 
-# 未知Bug
-这个bug目前只对Windows有效，Mac实测不会出现。bug详情：重新启动Windows后，输入法的皮肤会变得特别小而且样式很丑，重新部署也没用，目前我的解决办法是把`weasel.custom.yaml`这个文件里的东西清空，然后在`build`文件夹下的`waesel.yaml`这个文件里滑到最下面，找到`style`下的`color_scheme`，其值改为google(取决于自己喜欢哪款皮肤)，皮肤预览可以在[这个网站](https://blog.csdn.net/qq_18717031/article/details/124904468)中查看，改完之保存后重新部署就恢复正常了，且重启之后也是正常的。
+打开配置文件夹(A)和下载好的本仓库代码文件夹(B)，将B中除`squirrel.custom.yaml`以外的文件全复制到A中。
 
---- 
+点击 “任务栏\小狼毫输入法\重新部署”，首次部署大约要20秒左右，部署期间敲键盘输出的是英文，部署好后再敲就会正常显示了。
+
+### 未知Bug
+这个bug目前只对Windows有效，Mac实测不会出现。bug详情：
+
+重新启动Windows后，输入法的皮肤会变得特别小而且样式很丑，重新部署也没用，目前我的解决办法是把`weasel.custom.yaml`这个文件里的东西清空，然后在`build`文件夹下的`waesel.yaml`这个文件里滑到最下面，找到`style`下的`color_scheme`，其值改为google(取决于自己喜欢哪款皮肤)，皮肤预览可以在[这个网站](https://blog.csdn.net/qq_18717031/article/details/124904468)中查看，改完之保存后重新部署就恢复正常了，且重启之后也是正常的。
+
+---
 总结下来就是：
 1. 下载本仓库文件
 2. 找对配置文件目录
@@ -40,6 +37,7 @@ Win用户下载后的默认配置文件夹为：`%APPDATA\Rime%`，也可以通�
 - 小鹤双拼、明月全拼和Easy_en英文输入法
 - 默认按`shift`切换中英文
 - 按`Ctrl+Shift+Space`打开输入法切换框
+  - 可能会与系统快捷键冲突
 - 默认的候选框是横向的
 
 如果你不想折腾或者目前的配置就足够你使用了，下面的内容就不用再读了。
@@ -54,12 +52,27 @@ Win用户下载后的默认配置文件夹为：`%APPDATA\Rime%`，也可以通�
 我这里默认配置了词组，在`dicts`文件夹中，这里面的词组都是其他大佬做的，所以最好不要动，但我们可以维护自己的词典。打开`mydicts.dict.yaml`这个文件，文件如下图所示：
 <div align="center"><img src="https://gitlab.com/zhaochengcube/images/-/raw/main/pictures/2024/01/11_21_23_51_rime-dict.png" width="" height="" /></div>
 
-在`...`标记后另起一行即是我们自己配置的码表(词典)，码表通过制表符(Tab)分割为三个部分：文字，编码，权重。
+在`...`标记后另起一行即是我们自己配置的码表(词典)，码表通过制表符(Tab)分割为三个部分：
 
-文字即时敲击编码后展示的文字，如果编码有多个音节，各个音节以空格分开，权重越大，出现在候选框中的位置越靠前。切记：中间两个一定要是Tab，不能是空格！！！
+- 文字，输入编码后出现的候选
+- 编码，输入的字母或组合(音节)
+- 权重，决定“文字”在候选中出现的位次，越大则越靠前
+
+如上图所示，连续敲“oo”，第一个候选项会出现“哦哦”。现在新建一个词典项，比如：
+
+- 安静	an jing	9999 多个音节用空格隔开
+- 茕茕孑立  qqjl  1
+
+切记：中间两个一定要是Tab，不能是空格！！！实测添加一个词典项后重新部署的时间10秒左右。
+
+如果你有很多词组要添加，可以新建词典配置文件，文件命名要求：自定义.固定(dict.yaml)，比如添加一个：`mydicts2.dict.yaml`，文件内容要求如上，你可以按照你的习惯组织你整理的若干词典文件。
+
+打开配置文件夹下的`custom.dict.yaml`文件，在`import_tables`下添加你的词典文件，添加的时候文件名的固定部分可以省略，比如：`- mydicts2`，有目录的话也要加上目录前缀。
+
+要注意的是这个`custom.dict.yaml`文件中的配置顺序会影响候选出现的位次，因为不同词典文件可能出现相同权重的词典项，配置越上优先级越高。
 
 ### 自定义符号
-对应配置文件：`mysymbols.yaml`，在这里配置全角，半角以及符号，符号的配置参考[雾凇拼音](https://github.com/iDvel/rime-ice)，注意配置符号串的时候开头字母一定要是大写V
+对应配置文件：`mysymbols.yaml`，在这里配置全角，半角以及符号，符号的配置参考[雾凇拼音](https://github.com/iDvel/rime-ice)
 
 ### Lua脚本集成
 本配置默认集成了日期脚本，输入`date`会显示当前日期的大写和小写，输入`time`会显示当前时间
@@ -69,3 +82,14 @@ Win用户下载后的默认配置文件夹为：`%APPDATA\Rime%`，也可以通�
 - https://jiz4oh.com/2020/10/how-to-use-rime/
 - https://sspai.com/post/84373
 - https://dvel.me/posts/rime-ice/
+
+# 效果预览：
+
+## Mac：
+<div align="center"><img src="https://gitlab.com/zhaochengcube/images/-/raw/main/pictures/2024/01/11_20_32_46_rime-mac.png" width="" height="" /></div>
+
+## Win：
+<div align="center"><img src="https://gitlab.com/zhaochengcube/images/-/raw/main/pictures/2024/01/11_20_46_53_rime-win.png?ref_type=heads" width="" height="" /></div>
+
+## 英文输入
+<div align="center"><img src="https://gitlab.com/zhaochengcube/images/-/raw/main/pictures/2024/01/11_21_41_55_rime-en.png" width="" height="" /></div>
