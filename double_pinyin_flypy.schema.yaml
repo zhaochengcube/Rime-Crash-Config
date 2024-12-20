@@ -10,8 +10,6 @@ schema:
   schema_id: double_pinyin_flypy
   name: "小鹤双拼-薄荷定制"
   version: "24.10.02"
-  icon: "icon/zh.ico"
-  ascii_icon: "icon/en.ico"
   author:
     - Mintimate
   description: |
@@ -105,7 +103,7 @@ emoji_suggestion:
   option_name: emoji_suggestion
   tips: all
   inherit_comment: false
-  
+
 # 鹤形拆字辅助滤镜
 chaifen_cc:
   opencc_config: fly_Chaifen.json
@@ -170,8 +168,8 @@ reduce_english_filter:
 # 错音错字提示
 corrector_filter:
   # 当文字没有触发错字错音的情况下，保持原本的注释
-  keep_source_comment: false 
-  
+  keep_source_comment: false
+
 # 中国农历配置
 chineseLunarCalendar_translator: lunar
 
@@ -384,7 +382,7 @@ key_binder:
     - { when: always, accept: Control+Shift+5, toggle: extended_charset } # 切换扩展字符
     - { when: always, accept: Shift+space, toggle: full_shape } # 另一种切换全角/半角的方式
     - { when: always, accept: Control+period, toggle: ascii_punct } # 切换中/西文标点
-    
+
 menu:
   # 候选词个数
   page_size: 6
