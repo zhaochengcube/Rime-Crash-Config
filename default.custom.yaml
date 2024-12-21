@@ -1,9 +1,9 @@
 patch:
   schema_list:
-    - schema: double_pinyin_flypy  # 小鹤双拼
-    - schema: rime_mint            # 薄荷拼音
-    - schema: rime_mint_flypy      # 薄荷拼音-小鹤混输方案
-    # - schema: easy_en              # 英文输入
+    - schema: double_pinyin_flypy # 小鹤双拼
+    - schema: rime_mint # 薄荷拼音
+    - schema: rime_mint_flypy # 薄荷拼音-小鹤混输方案
+    - schema: easy_en # 英文输入
     # - schema: terra_pinyin         # 地球拼音-薄荷定制
     # - schema: wubi98_mint          # 五笔98-五笔小筑
     # - schema: wubi86_jidian        # 五笔86-极点86
@@ -13,7 +13,7 @@ patch:
     # - schema: double_pinyin_sogou  # 搜狗双拼
     # - schema: double_pinyin_ziguang # 紫光双拼
     # - schema: double_pinyin         # 自然码双拼
-  
+
   menu/+:
     page_size: 6
 
@@ -25,16 +25,16 @@ patch:
       - Control+grave
     # 在切换方案时保留的选项
     save_options:
-      - full_shape  # 保留全角模式
+      - full_shape # 保留全角模式
       - ascii_punct # 保留西文模式
-      - transcription     # 保留汉字简繁体选项
-      - emoji_suggestion  # Emoji
+      - transcription # 保留汉字简繁体选项
+      - emoji_suggestion # Emoji
     # 折叠选项以节省空间，多方案时建议折叠 true ，一个方案建议展开 false
     fold_options: true
     # 对选项进行缩写
     abbreviate_options: true
     # 选项之间的分隔符
-    option_list_separator: '／'
+    option_list_separator: "／"
 
   translator/+:
     # 启用自动造词
@@ -45,11 +45,11 @@ patch:
     enable_user_dict: true
     # 对已上屏的词语进行自动编码以提高下次输入的命中率
     encode_commit_history: true
-  
+
   key_binder:
     bindings:
       # Emacs 风格的快捷键
-      - { when: composing, accept: Control+p, send: Up }     # composing 时,Control+p 等同于 Up 键
+      - { when: composing, accept: Control+p, send: Up } # composing 时,Control+p 等同于 Up 键
       - { when: composing, accept: Control+n, send: Down }
       - { when: composing, accept: Control+b, send: Left }
       - { when: composing, accept: Control+f, send: Right }
@@ -57,22 +57,22 @@ patch:
       - { when: composing, accept: Control+e, send: End }
       - { when: composing, accept: Control+d, send: Delete }
       - { when: composing, accept: Control+k, send: Shift+Delete } # 删除到行尾
-      - { when: composing, accept: Control+g, send: Escape }       # 退出编码
-      - { when: composing, accept: Alt+v, send: Page_Up }          # 翻页
+      - { when: composing, accept: Control+g, send: Escape } # 退出编码
+      - { when: composing, accept: Alt+v, send: Page_Up } # 翻页
       - { when: composing, accept: Control+v, send: Page_Down }
       # 按词移动光标
       - { when: composing, accept: ISO_Left_Tab, send: Shift+Left } # ISO_Left_Tab 是 Shift+Tab
       - { when: composing, accept: Shift+Tab, send: Shift+Left }
       - { when: composing, accept: Tab, send: Shift+Right }
       # 翻页
-      - { when: paging, accept: minus, send: Page_Up }             # 编码窗口翻页
+      - { when: paging, accept: minus, send: Page_Up } # 编码窗口翻页
       - { when: has_menu, accept: equal, send: Page_Down }
-      - { when: paging, accept: comma, send: Page_Up }             # 候选窗口翻页
+      - { when: paging, accept: comma, send: Page_Up } # 候选窗口翻页
       - { when: has_menu, accept: period, send: Page_Down }
-      - { when: predicting, accept: comma, send: comma }           # 在预编码模式下,不当作快捷键
+      - { when: predicting, accept: comma, send: comma } # 在预编码模式下,不当作快捷键
       - { when: predicting, accept: period, send: period }
       # 切换状态
-      - { when: always, accept: Control+Shift+1, select: .next }   # 切换输入方案
+      - { when: always, accept: Control+Shift+1, select: .next } # 切换输入方案
       - { when: always, accept: Control+Shift+2, toggle: ascii_mode } # 切换中/西文模式
       - { when: always, accept: Control+Shift+3, toggle: full_shape } # 切换全角/半角
       - { when: always, accept: Control+Shift+4, toggle: transcription } # 切换简体/繁体
@@ -83,16 +83,16 @@ patch:
   recognizer:
     # 定义识别码的正则表达式规则
     patterns:
-      email: "^[a-z][-_.0-9a-z]*@.*$"  # 匹配电子邮件地址
-      uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"  # 匹配大写字母开头的字符串
-      url: "^(www[.]|https?:|ftp:|mailto:).*$|^[a-z]+[.].+$"  # 匹配 URL 或域名
+      email: "^[a-z][-_.0-9a-z]*@.*$" # 匹配电子邮件地址
+      uppercase: "[A-Z][-_+.'0-9A-Za-z]*$" # 匹配大写字母开头的字符串
+      url: "^(www[.]|https?:|ftp:|mailto:).*$|^[a-z]+[.].+$" # 匹配 URL 或域名
 
   ascii_composer:
     # 定义切换到西文模式的快捷键
     switch_key:
-      Caps_Lock: noop  # 按下 Caps Lock 会直接上屏
-      Control_L: noop  # 按下左 Control 键不做任何操作
-      Control_R: noop  # 按下右 Control 键不做任何操作
-      Shift_L: commit_code  # 按下左 Shift 键会直接上屏
-      Shift_R: inline_ascii  # 按下右 Shift 键会临时切换到西文模式
-    good_old_caps_lock: false  # 启用经典的 Caps Lock 开启西文模式的方式
+      Caps_Lock: noop # 按下 Caps Lock 会直接上屏
+      Control_L: noop # 按下左 Control 键不做任何操作
+      Control_R: noop # 按下右 Control 键不做任何操作
+      Shift_L: commit_code # 按下左 Shift 键会直接上屏
+      Shift_R: inline_ascii # 按下右 Shift 键会临时切换到西文模式
+    good_old_caps_lock: false # 启用经典的 Caps Lock 开启西文模式的方式
